@@ -20,7 +20,8 @@ namespace DDCA.NameSorter.Tests
         [TestCase("Parsons", "Lewis", "Archer", "Yoder", TestName = "Many names")]
         public void LoadFromLines(params string[] lines)
         {
-            var loader = new FullNameStringLoader();
+            var parser = new ParserMock();
+            var loader = new FullNameStringLoader(parser);
             var loaded = loader.LoadFromLines(lines);
             var loadedLastNames = loaded.Select(name => name.LastName);
             Assert.IsTrue(lines.SequenceEqual(loadedLastNames));

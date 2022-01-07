@@ -1,12 +1,17 @@
 using System.Collections.Generic;
+using System.Linq;
 
 namespace DDCA.NameSorter.Loader
 {
     public class FullNameStringLoader : IFullNameLoader<string>
     {
-        public IEnumerable<IFullName> LoadFromLines(IEnumerable<string> lines)
+        private readonly IFullNameParser<string> _parser;
+
+        public FullNameStringLoader(IFullNameParser<string> parser)
         {
-            throw new System.NotImplementedException();
+            _parser = parser;
         }
+
+        public IEnumerable<IFullName> LoadFromLines(IEnumerable<string> lines) => lines.Select(line => _parser.Parse(line));
     }
 }
