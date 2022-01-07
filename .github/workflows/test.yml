@@ -1,0 +1,24 @@
+name: Test
+on:
+  push:
+    branches:
+      - master
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Setup .net
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 5.x
+      - name: Test
+        run: dotnet test --logger "trx;LogFileName=test-results.trx"
+      - name: Test resport
+        uses: dorny/test-reporter@v1
+        if: success() || failure()
+        with:
+          name: Test Report
+          path: "**/*.trx"
+          reporter: dotnet-trx
