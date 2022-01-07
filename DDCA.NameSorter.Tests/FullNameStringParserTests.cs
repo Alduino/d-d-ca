@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using DDCA.NameSorter.Parser;
 using NUnit.Framework;
 
 namespace DDCA.NameSorter.Tests

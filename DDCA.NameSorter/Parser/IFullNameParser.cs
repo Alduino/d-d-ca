@@ -1,4 +1,4 @@
-namespace DDCA.NameSorter
+namespace DDCA.NameSorter.Parser
 {
     /// <summary>
     /// Provides a method to parse IFullNames from some type

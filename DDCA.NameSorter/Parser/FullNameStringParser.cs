@@ -1,7 +1,7 @@
 using System;
 using System.Linq;
 
-namespace DDCA.NameSorter
+namespace DDCA.NameSorter.Parser
 {
     public class FullNameStringParser : IFullNameParser<string>
     {

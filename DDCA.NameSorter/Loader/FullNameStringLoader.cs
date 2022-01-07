@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using DDCA.NameSorter.Parser;
 
 namespace DDCA.NameSorter.Loader
 {
