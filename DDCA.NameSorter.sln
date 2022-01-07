@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDCA.NameSorter", "DDCA.NameSorter\DDCA.NameSorter.csproj", "{EA97137F-456B-469D-8BF8-D0F0DDB81C97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDCA.NameSorter.Tests", "DDCA.NameSorter.Tests\DDCA.NameSorter.Tests.csproj", "{DACDF4F3-800F-4FB7-9EE4-198DF350ACB7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EA97137F-456B-469D-8BF8-D0F0DDB81C97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA97137F-456B-469D-8BF8-D0F0DDB81C97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA97137F-456B-469D-8BF8-D0F0DDB81C97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA97137F-456B-469D-8BF8-D0F0DDB81C97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DACDF4F3-800F-4FB7-9EE4-198DF350ACB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DACDF4F3-800F-4FB7-9EE4-198DF350ACB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DACDF4F3-800F-4FB7-9EE4-198DF350ACB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DACDF4F3-800F-4FB7-9EE4-198DF350ACB7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
