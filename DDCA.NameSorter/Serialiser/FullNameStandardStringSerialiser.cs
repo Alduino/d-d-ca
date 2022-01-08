@@ -7,7 +7,8 @@ namespace DDCA.NameSorter.Serialiser
     {
         public string Serialise(IFullName fullName)
         {
-            throw new System.NotImplementedException();
+            var givenNames = string.Join(' ', fullName.GivenNames);
+            return $"{givenNames} {fullName.LastName}";
         }
     }
 }
