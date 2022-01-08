@@ -4,10 +4,14 @@ using DDCA.NameSorter.Loader;
 
 namespace DDCA.NameSorter
 {
+    /// <summary>
+    /// Methods to read full names from a file
+    /// </summary>
     public class FullNameFileReader
     {
         private readonly IFullNameLoader<string> _loader;
 
+        /// <param name="loader">The loader to use</param>
         public FullNameFileReader(IFullNameLoader<string> loader)
         {
             _loader = loader;

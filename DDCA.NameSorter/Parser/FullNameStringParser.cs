@@ -3,6 +3,9 @@ using System.Linq;
 
 namespace DDCA.NameSorter.Parser
 {
+    /// <summary>
+    /// Parses a full name from a string in the format "(...space separated given names) (last name)"
+    /// </summary>
     public class FullNameStringParser : IFullNameParser<string>
     {
         /// <summary>

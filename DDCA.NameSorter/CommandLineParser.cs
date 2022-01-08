@@ -3,6 +3,9 @@ using System.Data;
 
 namespace DDCA.NameSorter
 {
+    /// <summary>
+    /// Super simple imperative command line parser
+    /// </summary>
     public class CommandLineParser
     {
         private readonly string[] _args;

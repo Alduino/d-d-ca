@@ -5,6 +5,9 @@ using DDCA.NameSorter.Serialiser;
 
 namespace DDCA.NameSorter.Output
 {
+    /// <summary>
+    /// Writes the names to a file, where each name is on its own line
+    /// </summary>
     public class FullNameFileLinesOutput : IFullNameOutput
     {
         private readonly IFullNameSerialiser<string> _serialiser;

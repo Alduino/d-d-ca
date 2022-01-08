@@ -4,6 +4,9 @@ using DDCA.NameSorter.Parser;
 
 namespace DDCA.NameSorter.Loader
 {
+    /// <summary>
+    /// Loads full names from a file using the specified parser
+    /// </summary>
     public class FullNameStringLoader : IFullNameLoader<string>
     {
         private readonly IFullNameParser<string> _parser;

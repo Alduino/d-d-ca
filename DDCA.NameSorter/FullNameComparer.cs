@@ -4,7 +4,8 @@ using System.Collections.Generic;
 namespace DDCA.NameSorter
 {
     /// <summary>
-    /// Compares FullNames first by the last name, then by any given names.
+    /// Compares FullNames first by the last name, then by any given names. A null name is less than a non-null name. A
+    /// name with fewer given names is greater than an otherwise equal name with more.
     /// </summary>
     public class FullNameComparer : Comparer<IFullName>
     {
