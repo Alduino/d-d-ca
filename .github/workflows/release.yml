@@ -1,0 +1,26 @@
+name: Release
+on:
+  push:
+    tags:
+      - '*'
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Setup .net
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 5.x
+      - name: Build
+        run: dotnet build -c Release
+      - name: Zip
+        run: zip -qq -r release-linux64.zip DDCA.NameSorter DDCA.NameSorter.deps.json DDCA.NameSorter.dll  DDCA.NameSorter.runtimeconfig.json
+        working-directory: DDCA.NameSorter/bin/Release/net5.0
+      - name: Release
+        uses: ncipollo/release-action@v1
+        with:
+          draft: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+          artifacts: "DDCA.NameSorter/bin/Release/net5.0/release-linux64.zip"
