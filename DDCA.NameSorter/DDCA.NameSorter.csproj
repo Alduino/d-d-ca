@@ -4,6 +4,18 @@
         <OutputType>Exe</OutputType>
         <TargetFramework>net5.0</TargetFramework>
         <Nullable>enable</Nullable>
+        <IsPackable>false</IsPackable>
+        <Title>Name Sorter</Title>
+        <Authors>Alduino</Authors>
+        <Description>Name Sorter for the D&amp;D Code Assessment</Description>
+        <Copyright>Zach Barham 2022</Copyright>
+        <PackageProjectUrl>https://github.com/Alduino/d-d-ca</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/Alduino/d-d-ca</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <Company>Alduino</Company>
+        <Product>NameSorter</Product>
+        <AssemblyVersion>1.0.0</AssemblyVersion>
+        <NeutralLanguage>en-AU</NeutralLanguage>
     </PropertyGroup>
 
 </Project>
