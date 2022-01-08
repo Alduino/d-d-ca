@@ -14,7 +14,7 @@ namespace DDCA.NameSorter
     class Program
     {
         private const string OutputPath = "sorted-names-list.txt";
-        
+
         private static void Main(string[] args)
         {
             var path = ReadPathFromArgs(args);
@@ -22,15 +22,14 @@ namespace DDCA.NameSorter
 
             var comparer = new FullNameComparer();
 
-            var namesList = names.ToList();
-            namesList.Sort(comparer);
+            names.Sort(comparer);
 
             var serialiser = new FullNameStandardStringSerialiser();
             var stdOutput = new FullNameStandardOutput(serialiser);
             var fileOutput = new FullNameFileLinesOutput(serialiser, OutputPath);
 
-            stdOutput.WriteToOutput(namesList);
-            fileOutput.WriteToOutput(namesList);
+            stdOutput.WriteToOutput(names);
+            fileOutput.WriteToOutput(names);
         }
 
         private static void DisplayUsage()
@@ -47,7 +46,7 @@ namespace DDCA.NameSorter
             Environment.Exit(code);
         }
 
-        private static IEnumerable<IFullName> ReadNamesFromPath(string path)
+        private static List<IFullName> ReadNamesFromPath(string path)
         {
             try
             {
@@ -55,7 +54,8 @@ namespace DDCA.NameSorter
                 var loader = new FullNameStringLoader(parser);
                 var reader = new FullNameFileReader(loader);
 
-                return reader.ReadFromFileLines(path);
+                var names = reader.ReadFromFileLines(path);
+                return names.ToList();
             }
             catch (Exception ex) when (ex is ArgumentException or IOException or SecurityException
                                            or UnauthorizedAccessException)
