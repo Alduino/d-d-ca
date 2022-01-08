@@ -1,4 +1,5 @@
 using System;
+using System.Data;
 
 namespace DDCA.NameSorter
 {
@@ -18,9 +19,12 @@ namespace DDCA.NameSorter
         /// <summary>
         /// Throws if the number of command line parameters is greater than count
         /// </summary>
+        /// <exception cref="ArgumentOutOfRangeException">count is below zero</exception>
+        /// <exception cref="ConstraintException">assertion failed: too many parameters</exception>
         public void AssertMaximumParameterCount(int count)
         {
-            throw new NotImplementedException();
+            if (count < 0) throw new ArgumentOutOfRangeException(nameof(count), "Maximum count must be at least 0");
+            if (_args.Length > count) throw new ConstraintException($"Too many parameters, expecting {count}");
         }
 
         /// <summary>
@@ -30,9 +34,20 @@ namespace DDCA.NameSorter
         /// <param name="idx">The index of the parameter</param>
         /// <param name="label">A name to show in error messages</param>
         /// <returns>The value of the parameter</returns>
+        /// <exception cref="ArgumentOutOfRangeException">idx is below zero</exception>
+        /// <exception cref="IndexOutOfRangeException">user error: not enough arguments</exception>
         public string ReadParameter(int idx, string label)
         {
-            throw new NotImplementedException();
+            if (idx < 0) throw new ArgumentOutOfRangeException(nameof(idx), "Index must be at least 0");
+
+            if (idx >= _args.Length)
+            {
+                var s = idx == 0 ? "" : "s";
+                throw new IndexOutOfRangeException(
+                    $"Missing parameter '{label}', expecting at least {idx + 1} parameter{s}");
+            }
+
+            return _args[idx];
         }
     }
 }
