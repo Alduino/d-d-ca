@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace DDCA.NameSorter
+namespace DDCA.NameSorter.Loader
 {
     public interface IFullNameLoader<in T>
     {
